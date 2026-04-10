@@ -1,0 +1,99 @@
+body {
+    background-color: #2b2214; /* Fallback color */
+    background-image: url('../images/bg.jpeg');
+    background-attachment: fixed; /* Keeps bg still while text scrolls - very 2000s */
+    background-size: cover;
+}
+
+#wrapper {
+    max-width: 1060px;
+    margin: 0 auto;
+    border: 2px solid #5d4a31;
+    background-color: rgba(43, 34, 20, 0.9);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Banner Area */
+header {
+    height: 180px;
+    background: linear-gradient(rgba(255, 255, 255, 0.313), rgba(199, 199, 199, 0.3)), url('your-header-bg.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #867154;
+    color: white;
+}
+
+header h1 {
+    font-family: "Times New Roman", serif;
+    font-style: italic;
+    font-size: 4.5em; /* Increased font size */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: lighter;
+}
+
+/* Top Navigation */
+nav.top-nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background: #54514c;
+}
+
+nav.top-nav a {
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #867154;
+    font-weight: bold;
+    font-size: 0.9em;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav.top-nav a:hover { background: #5d4a31; }
+
+/* Layout Grid */
+.main-container {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    gap: 15px;
+    padding: 15px;
+    background: radial-gradient(rgba(211, 211, 211, 0.191), rgba(0, 0, 0, 0.414));
+}
+
+/* Sidebars & Content Boxes */
+.column { display: flex; flex-direction: column; gap: 15px; }
+
+.box {
+    border: 1px solid #5d4a31;
+    background: #3d311f;
+}
+
+.box-header {
+    background: #5d4a31;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.85em;
+    color: #e0d5bc;
+}
+
+.box-content { padding: 10px; font-size: 0.85em; }
+
+/* Center Content - Rounded style from your image */
+#main-content {
+    background: #5d472976;
+    border: 1px solid #9e7f4f;
+    padding: 30px;
+    min-height: 500px;
+    color: #f0e6d2;
+}
+
+/* Sidebar Lists */
+ul.nav-list { list-style: none; padding: 0; margin: 0; text-align: center; }
+ul.nav-list li { margin: 10px 0; border-bottom: 1px solid #4d3d28; padding-bottom: 5px; }
+ul.nav-list a { color: #d4c3a1; text-decoration: none; font-weight: bold; }
+
+/* Media Player Placeholder */
+.media-row { height: 15px; background: #4d3d28; margin-bottom: 4px; border: 1px solid #5d4a31; }

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Searching for Lucet</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+
+<div id="wrapper">
+    <header>
+        <h1>Searching for Lucet</h1>
+    </header>
+
+    <nav class="top-nav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Journal Entries</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <aside class="column">
+            <div class="box">
+                <div class="box-header">Navigation</div>
+                <div class="box-content">
+                    <ul class="nav-list">
+                        <li><a href="#">My Blog</a></li>
+                        <li><a href="#">My Gallery</a></li>
+                        <li><a href="#">My Music</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-header">Update Log</div>
+                <div id="update-log" class="box-content" style="height: 150px; overflow-y: auto;">
+                    Loading updates...
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-header">Media Player</div>
+                <div class="box-content">
+                    <audio id="player" controls style="width: 100%; margin-bottom: 10px;"></audio>
+                    <div class="media-row"></div>
+                    <div class="media-row"></div>
+                    <div class="media-row"></div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center Content -->
+        <main id="main-content">
+            <h2 id="page-title">Loading...</h2>
+            <div id="page-body">
+                Please wait while the music major's thoughts load...
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="column">
+            <div class="box">
+                <div class="box-content" style="text-align: center;">
+                    <div style="width: 100%; height: 120px; background: #443827; border: 1px inset #000;"></div>
+                    <p><strong>Anon | Webmaster</strong></p>
+                    <div id="webmaster-desc" style="font-size: 0.8em; border: 1px solid #5d4a31; padding: 5px;">
+                        Loading bio...
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-header">Buttons</div>
+                <div class="box-content">
+                    <div class="media-row"></div>
+                    <div class="media-row"></div>
+                    <div class="media-row"></div>
+                    <div class="media-row"></div>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<script>
+    // --- CONTENT INJECTION LOGIC ---
+    const BUCKET_URL = "https://YOUR_PROJECT_ID.supabase.co/storage/v1/object/public/blog-content";
+
+    async function injectContent() {
+        try {
+            // 1. Inject Home Text
+            const textReq = await fetch(`${BUCKET_URL}/home/intro.txt`);
+            if (textReq.ok) {
+                const text = await textReq.text();
+                document.getElementById('page-body').innerText = text;
+                document.getElementById('page-title').innerText = "Home Feed";
+            }
+
+            // 2. Inject Music
+            const audio = document.getElementById('player');
+            audio.src = `${BUCKET_URL}/home/music-1.mp3`;
+
+            // 3. Inject Webmaster Bio
+            const bioReq = await fetch(`${BUCKET_URL}/about/bio.txt`);
+            if (bioReq.ok) {
+                document.getElementById('webmaster-desc').innerText = await bioReq.text();
+            }
+
+            // 4. Inject Update Log
+            const logReq = await fetch(`${BUCKET_URL}/logs/updates.txt`);
+            if (logReq.ok) {
+                document.getElementById('update-log').innerText = await logReq.text();
+            }
+
+        } catch (err) {
+            console.log("Bucket not ready or files missing.", err);
+        }
+    }
+
+    injectContent();
+</script>
+
+</body>
+</html>
