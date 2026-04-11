@@ -1,6 +1,6 @@
 body {
     background-color: #2b2214; /* Fallback color */
-    background-image: url('../images/bg.jpeg');
+    background-image: url('../assets/images/bg.jpeg');
     background-attachment: fixed; /* Keeps bg still while text scrolls - very 2000s */
     background-size: cover;
 }
@@ -60,6 +60,7 @@ nav.top-nav a:hover { background: #5d4a31; }
     gap: 15px;
     padding: 15px;
     background: radial-gradient(rgba(211, 211, 211, 0.191), rgba(0, 0, 0, 0.414));
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Sidebars & Content Boxes */

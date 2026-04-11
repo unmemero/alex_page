@@ -1,0 +1,1 @@
+Cursor assets from https://www.rw-designer.com/cursor-set/lavender
