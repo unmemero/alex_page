@@ -16,9 +16,12 @@ export function parseMarkdown(markdown) {
             } else {
                 imgSrc = `./assets/images/${url}`;
             }
-            html += `<img src="${imgSrc}" alt="${alt}">`;
+            html += `<div class="image-container">`;
+            html += `<img src="${imgSrc}" alt="${alt}"><br />`;
+            html += "<hr />"
+            html += `</div>`;
         } else if (line.startsWith('---')) {
-            html += `<small class="post-footer">${line.substring(3).trim()}</small>`;
+            html += `<small class="post-footer" style="font-size: 0.1em;">${line.substring(3).trim()}</small>`;
         } else if (line.trim() !== '') {
             html += `<p>${line}</p>`;
         }
