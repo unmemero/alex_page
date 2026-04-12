@@ -1,0 +1,14 @@
+body {
+    background-color: #2b2214; /* Fallback color */
+    background-image: url('../assets/images/bg.jpeg');
+    background-attachment: fixed; /* Keeps bg still while text scrolls - very 2000s */
+    background-size: cover;
+}
+
+#wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 2px solid #5d4a31;
+    background-color: rgba(43, 34, 20, 0.9);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}

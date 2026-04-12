@@ -1,0 +1,16 @@
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px; /* Thinner scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #000000; /* Black background bar */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888888; /* Gray scrollbar handle */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555555; /* Darker gray on hover */
+}
