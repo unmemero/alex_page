@@ -46,3 +46,33 @@ export async function loadBlogPosts() {
         document.getElementById('main-content').innerHTML += '<p>Error loading blog posts.</p>';
     }
 }
+
+export async function loadJournalEntries() {
+    document.getElementById('main-content').innerHTML = '<h1>Journal</h1>';
+    try {
+        const response = await fetch(`${contentPath}/entries.txt`);
+        if (!response.ok) {
+            throw new Error('Failed to load entries list');
+        }
+        const text = await response.text();
+        const entries = text.split('\n').filter(e => e.trim() !== '');
+        for (const entryFile of entries) {
+            try {
+                const entryResponse = await fetch(`${contentPath}/entries/${entryFile}.md`);
+                if (entryResponse.ok) {
+                    const markdown = await entryResponse.text();
+                    const htmlContent = parseMarkdown(markdown);
+                    const entryContainer = document.createElement('div');
+                    entryContainer.className = 'journal-entry';
+                    entryContainer.innerHTML = htmlContent;
+                    document.getElementById('main-content').appendChild(entryContainer);
+                }
+            } catch (error) {
+                console.error(`Failed to load journal entry: ${entryFile}`, error);
+            }
+        }
+    } catch (error) {
+        console.error('Failed to load journal entries:', error);
+        document.getElementById('main-content').innerHTML += '<p>Error loading journal entries.</p>';
+    }
+}

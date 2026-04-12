@@ -1,0 +1,22 @@
+.journal-entry {
+    background-color: #fdf5e6; /* A soft, paper-like color */
+    font-family: 'Courier New', Courier, monospace; /* A typewriter-style font */
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #d2b48c; /* A light brown border */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    line-height: 1.6;
+    color: #333; /* Darker text color for readability */
+}
+
+.journal-entry h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.journal-entry .entry-date {
+    text-align: right;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}

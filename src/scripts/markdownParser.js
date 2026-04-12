@@ -21,7 +21,8 @@ export function parseMarkdown(markdown) {
             html += "<hr />"
             html += `</div>`;
         } else if (line.startsWith('---')) {
-            html += `<small class="post-footer" style="font-size: 0.1em;">${line.substring(3).trim()}</small>`;
+            const date = line.substring(3).trim();
+            html = html.replace('<hr />', `<p>${date}</p><hr />`);
         } else if (line.trim() !== '') {
             html += `<p>${line}</p>`;
         }

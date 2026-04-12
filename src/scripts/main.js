@@ -1,4 +1,4 @@
-import { loadContent, loadBlogPosts } from './contentLoader.js';
+import { loadContent, loadBlogPosts, loadJournalEntries } from './contentLoader.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.top-nav a');
@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (page === 'blog') {
                 loadBlogPosts();
+            } else if (page === 'journal') {
+                loadJournalEntries();
             } else if (page === 'index' || page === '') {
                 loadContent('home');
             } else {
