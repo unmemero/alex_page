@@ -53,6 +53,10 @@ nav.top-nav a {
 
 nav.top-nav a:hover { background: #5d4a31; }
 
+nav.top-nav a.active {
+    background: #000;
+}
+
 /* Layout Grid */
 .main-container {
     display: grid;
