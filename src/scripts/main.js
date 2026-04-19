@@ -23,6 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Dynamically import and run the contact script after the form is loaded
                     import('./contact.js');
                 });
+            } else if (page === 'contact') {
+                loadContent(page, () => {
+                    // Dynamically import and run the contact script after the form is loaded
+                    import('./contact.js');
+                });
             } else if (page === 'index' || page === 'home' || page === '') {
                 loadContent('home');
             } else {
