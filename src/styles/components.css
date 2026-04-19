@@ -39,15 +39,29 @@ ul.nav-list a:hover {
     border: 1px solid #5d4a31; 
 }
 
-.main-page-button {
-    width: 100%;
-    height: 40px;
-    background: rgb(80, 80, 80);
-    color: white;
-    font-weight: bold;
-    font-size: 1.1em;
-    cursor: pointer;
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
 }
+
+.main-page-button {
+    width: 100px; /* Increased width */
+    height: 35px; /* Increased height */
+    background-image: url('../assets/images/buttons/button.png');
+    background-size: cover; /* Ensure the image covers the button */
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #5d4a31; /* Optional: adds a border */
+    cursor: pointer;
+    margin: 2px; /* Add some spacing between buttons */
+}
+
+#btn1 { background-image: url('../assets/images/buttons/button.png'); }
+#btn2 { background-image: url('../assets/images/buttons/button2.jpeg'); }
+#btn3 { background-image: url('../assets/images/buttons/button 3.jpeg'); }
+#btn4 { background-image: url('../assets/images/buttons/button 4.jpeg'); }
 
 #profile-pic {
     width: 100%; 

@@ -18,7 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 loadBlogPosts();
             } else if (page === 'journal') {
                 loadJournalEntries();
-            } else if (page === 'index' || page === '') {
+            } else if (page === 'contact') {
+                loadContent(page, () => {
+                    // Dynamically import and run the contact script after the form is loaded
+                    import('./contact.js');
+                });
+            } else if (page === 'index' || page === 'home' || page === '') {
                 loadContent('home');
             } else {
                 loadContent(page);
@@ -33,5 +38,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     loadContent('home');
 });
-
-

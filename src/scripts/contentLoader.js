@@ -1,13 +1,16 @@
 import { contentPath } from './utils.js';
 import { parseMarkdown } from './markdownParser.js';
 
-export async function loadContent(page) {
+export async function loadContent(page, callback) {
     try {
         const response = await fetch(`${contentPath}/${page}.md`);
         if (response.ok) {
             const markdown = await response.text();
             const htmlContent = parseMarkdown(markdown);
             document.getElementById('main-content').innerHTML = htmlContent;
+            if (callback) {
+                callback();
+            }
         } else {
             document.getElementById('main-content').innerHTML = '<p>Error loading content. Please try again later.</p>';
         }

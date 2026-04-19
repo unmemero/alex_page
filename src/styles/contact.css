@@ -1,0 +1,48 @@
+.contact-form {
+    border: 1px solid #5d4a31;
+    background: black;
+    padding: 1.5rem;
+    border-radius: 4px;
+    max-height: 500px;
+    border: solid 3px grey;
+}
+
+.contact-form h1{
+    color: white;
+}
+
+.form-fields {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.form-group input{
+    width: 95%;
+    padding: 0.5rem;
+    border: solid 1px grey;
+}
+
+.form-group textarea{
+    width: 95%;
+    padding: 0.5rem;
+    border: solid 1px grey; 
+}
+
+.contact-form button {
+    background: black;
+    color: white;
+    border: white solid 2px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.contact-form button:hover {
+    background: white;
+    color: black;
+    border: black solid 2px;
+}

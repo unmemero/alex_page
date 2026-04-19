@@ -1,18 +1,28 @@
 /* Banner Area */
 header {
-    height: 180px;
-    background: linear-gradient(rgba(255, 255, 255, 0.628), rgba(255, 255, 255, 0.3));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 4px solid #867154;
-    color: white;
+  height: 180px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: radial-gradient(
+    circle at center, 
+    rgba(255, 255, 255, 0.773) 0%,   /* Very bright white core */
+    rgba(255, 240, 180, 0.254) 40%,  /* Warm golden glow */
+    transparent 100%
+  );
+  backdrop-filter: blur(12px) brightness(1.5);
+  box-shadow: 0 0 30px rgba(255, 230, 150, 0.2);
+  mix-blend-mode: screen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #867154;
+  color: white;
 }
 
 header h1 {
-    font-family: "Times New Roman", serif;
-    font-style: italic;
-    font-size: 4.5em; /* Increased font size */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    font-weight: lighter;
+  font-family: "Alice", serif;
+  font-style: italic;
+  font-size: 4.5em; /* Increased font size */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-weight: lighter;
 }
