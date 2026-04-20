@@ -1,8 +1,3 @@
----
-title: Sitemap
-layout: base.njk
----
-
 <div class="content">
   <h1>Sitemap</h1>
   <ul>

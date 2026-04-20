@@ -12,60 +12,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     topNavLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            setActiveLink(link);
-            const page = new URL(link.href).pathname.split('/').pop().replace('.html', '');
-            
-            if (page === 'blog') {
-                loadBlogPosts();
-            } else if (page === 'journal') {
-                loadJournalEntries();
-            } else if (page === 'contact') {
-                loadContent(page, () => {
-                    // Dynamically import and run the contact script after the form is loaded
-                    import('./contact.js');
-                });
-            } else if (page === 'index' || page === 'home' || page === '') {
-                loadContent('home');
-            } else {
-                loadContent(page);
-            }
-        });
+        // Allow default browser navigation
     });
 
     sideNavLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            const page = new URL(link.href).pathname.split('/').pop().replace('.html', '');
-            if (page !== 'music') {
-                event.preventDefault();
-                if (page === 'blog') {
-                    loadBlogPosts();
-                } else if (page === 'gallery') {
-                    loadContent('gallery');
-                } else if (page === 'sitemap') {
-                    loadContent('sitemap');
-                }
-            }
-        });
+        // No special logic, allow default browser navigation
     });
 
-    // Set initial active link and content
-    const homeLink = Array.from(topNavLinks).find(link => link.href.includes('index.html'));
-    if (homeLink) {
-        setActiveLink(homeLink);
+    // Set initial active link and content based on the current URL
+    const path = window.location.pathname;
+    const pageName = path.split('/').pop().replace('.html', '');
+    const activeLink = Array.from(topNavLinks).find(link => link.href.endsWith(path)) || 
+                       Array.from(sideNavLinks).find(link => link.href.endsWith(path));
+
+    if (activeLink) {
+        setActiveLink(activeLink);
     }
-    loadContent('home');
 
-
-
-        if (player) {
-            player.addEventListener('ended', () => {
-                currentSongIndex = (currentSongIndex + 1) % songs.length;
-                playSong();
-            });
-        }
-
-        playSong();
+    if (pageName === 'blog') {
+        loadBlogPosts();
+    } else if (pageName === 'journal') {
+        loadJournalEntries();
+    } else if (pageName === 'contact') {
+        loadContent('contact', () => import('./contact.js'));
+    } else if (pageName && pageName !== 'index') {
+        loadContent(pageName);
+    } else {
+        loadContent('home');
     }
-);
+});
