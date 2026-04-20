@@ -1,3 +1,5 @@
+import DOMPurify from 'dompurify';
+
 console.log('contact.js module loaded');
 
 function initializeForm() {
@@ -19,11 +21,9 @@ function initializeForm() {
 
     console.log('Contact form element found. Attaching event listener.');
 
-    // Sanitize function to strip HTML tags
-    const sanitizeHTML = (str) => {
-        const temp = document.createElement('div');
-        temp.textContent = str;
-        return temp.innerHTML;
+    // Sanitize function using DOMPurify
+    const sanitize = (str) => {
+        return DOMPurify.sanitize(str);
     };
 
     // Form Submission Handler
@@ -31,9 +31,9 @@ function initializeForm() {
         e.preventDefault();
         console.log('Form submission intercepted.');
 
-        const name = sanitizeHTML(nameInput.value.trim());
-        const email = sanitizeHTML(emailInput.value.trim());
-        const message = sanitizeHTML(messageInput.value.trim());
+        const name = sanitize(nameInput.value.trim());
+        const email = sanitize(emailInput.value.trim());
+        const message = sanitize(messageInput.value.trim());
 
         if (!name || !email || !message) {
             alert('Please fill in all fields.');

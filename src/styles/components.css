@@ -99,3 +99,19 @@ ul.nav-list a:hover {
     color: #f0e6d2;
     font-family: Impact, sans-serif;
 }
+
+/* Playlist styles */
+.playlist-item {
+    padding: 5px;
+    cursor: pointer;
+    border-bottom: 1px solid #5d4a31;
+}
+
+.playlist-item:hover {
+    background-color: #9e7f4f;
+}
+
+.playlist-item.active {
+    background-color: #9e7f4f;
+    font-weight: bold;
+}
