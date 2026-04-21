@@ -1,0 +1,28 @@
+name = "homer_page"
+
+[site]
+# Define the bucket where static assets are stored
+bucket = "src"
+
+[build]
+# Command to build the project (if applicable)
+command = ""
+
+[[rules]]
+# Serve .txt files explicitly as plain text
+type = "Text"
+globs = ["**/*.txt"]
+fallthrough = true
+
+[[rules]]
+# Serve .md files explicitly as plain text
+type = "Text"
+globs = ["**/*.md"]
+fallthrough = true
+
+[env]
+# Default environment settings
+
+# Added compatibility_date and main entry point to resolve warnings
+compatibility_date = "2026-04-20"
+main = "src/index.js"

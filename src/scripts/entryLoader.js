@@ -13,11 +13,13 @@ async function loadBlogPosts() {
         }
         const text = await response.text();
         console.log('Posts list content:', text);
-        const posts = text.split('\n').filter(p => p.trim() !== '');
+        const posts = text.split('\n').filter(p => p.trim() !== '' && /^[a-zA-Z0-9_-]+$/.test(p.trim())); // Validate entries
+        console.log('Validated posts list:', posts);
         for (const postFile of posts) {
-            console.log('Loading post file:', postFile);
+            const postUrl = `${contentPath}/posts/${postFile}.md`;
+            console.log('Loading post file from URL:', postUrl);
             try {
-                const postResponse = await fetch(`${contentPath}/posts/${postFile}.md`);
+                const postResponse = await fetch(postUrl);
                 console.log('Fetched post file response:', postResponse);
                 const contentType = postResponse.headers.get('Content-Type');
                 console.log('Content-Type:', contentType);
@@ -36,6 +38,7 @@ async function loadBlogPosts() {
                 }
             } catch (error) {
                 console.error(`Failed to load blog post: ${postFile}`, error);
+                mainContent.innerHTML += `<p>Error loading blog post: ${postFile}</p>`;
             }
         }
     } catch (error) {
@@ -56,11 +59,13 @@ async function loadJournalEntries() {
         }
         const text = await response.text();
         console.log('Entries list content:', text);
-        const entries = text.split('\n').filter(e => e.trim() !== '');
+        const entries = text.split('\n').filter(e => e.trim() !== '' && /^[a-zA-Z0-9_-]+$/.test(e.trim())); // Validate entries
+        console.log('Validated entries list:', entries);
         for (const entryFile of entries) {
-            console.log('Loading entry file:', entryFile);
+            const entryUrl = `${contentPath}/entries/${entryFile}.md`;
+            console.log('Loading entry file from URL:', entryUrl);
             try {
-                const entryResponse = await fetch(`${contentPath}/entries/${entryFile}.md`);
+                const entryResponse = await fetch(entryUrl);
                 console.log('Fetched entry file response:', entryResponse);
                 const contentType = entryResponse.headers.get('Content-Type');
                 console.log('Content-Type:', contentType);
@@ -79,6 +84,7 @@ async function loadJournalEntries() {
                 }
             } catch (error) {
                 console.error(`Failed to load journal entry: ${entryFile}`, error);
+                mainContent.innerHTML += `<p>Error loading journal entry: ${entryFile}</p>`;
             }
         }
     } catch (error) {
@@ -86,6 +92,8 @@ async function loadJournalEntries() {
         mainContent.innerHTML += '<p>Error loading journal entries.</p>';
     }
 }
+
+// Reminder: Ensure the server is configured to serve .md files with Content-Type: text/markdown
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded event fired');

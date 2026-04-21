@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (pageName === 'journal') {
         loadJournalEntries();
     } else if (pageName === 'contact') {
-        loadContent('contact', () => import('./contact.js'));
+        loadContent('contact', () => import('/scripts/contact.js'));
     } else if (pageName && pageName !== 'index') {
         loadContent(pageName);
     } else {
