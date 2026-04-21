@@ -23,7 +23,7 @@ export async function loadContent(page, callback) {
 export async function loadBlogPosts() {
     document.getElementById('main-content').innerHTML = '<h1>Blog</h1>';
     try {
-        const response = await fetch(`${contentPath}/posts.txt`);
+        const response = await fetch(`${contentPath}/posts/posts.txt`);
         if (!response.ok) {
             throw new Error('Failed to load posts list');
         }
@@ -53,7 +53,7 @@ export async function loadBlogPosts() {
 export async function loadJournalEntries() {
     document.getElementById('main-content').innerHTML = '<h1>Journal</h1>';
     try {
-        const response = await fetch(`${contentPath}/entries.txt`);
+        const response = await fetch(`${contentPath}/entries/entries.txt`);
         if (!response.ok) {
             throw new Error('Failed to load entries list');
         }
