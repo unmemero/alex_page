@@ -1,0 +1,9 @@
+[
+    {
+        "metaData": {
+            "artist": "Artist Name",
+            "title": "Song Title"
+        },
+        "url": "/assets/music/your-song.mp3"
+    }
+]

@@ -49,7 +49,55 @@
         <main id="main-content">
             <h2 id="page-title">Music</h2>
             <div id="page-body">
-                <p>The music player has been removed.</p>
+                <div id="retro-player">
+                    <!-- Main Window -->
+                    <div class="retro-main-window">
+                        <div class="retro-title-bar">
+                            <div class="retro-title-bar-text">RETRO PLAYER</div>
+                            <div class="retro-title-bar-buttons">
+                                <button class="retro-minimize">-</button>
+                                <button class="retro-maximize">[]</button>
+                                <button class="retro-close">X</button>
+                            </div>
+                        </div>
+                        <div class="retro-content">
+                            <div class="retro-display">
+                                <div id="track-info" class="retro-track-info">
+                                    <span id="track-title"></span> - <span id="track-artist"></span>
+                                </div>
+                                <div id="time-display" class="retro-time-display">00:00</div>
+                            </div>
+                            <div class="retro-controls">
+                                <button id="prev-btn" class="retro-btn">⏮</button>
+                                <button id="play-btn" class="retro-btn">⏯</button>
+                                <button id="pause-btn" class="retro-btn">⏸</button>
+                                <button id="stop-btn" class="retro-btn">⏹</button>
+                                <button id="next-btn" class="retro-btn">⏭</button>
+                            </div>
+                            <div class="retro-sliders">
+                                <label>Volume</label>
+                                <input id="volume-slider" type="range" min="0" max="100" value="100">
+                                <div id="progress-container" class="retro-progress-container">
+                                    <div id="progress-bar" class="retro-progress-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Playlist Window -->
+                    <div class="retro-playlist-window">
+                        <div class="retro-title-bar">
+                            <div class="retro-title-bar-text">RETRO PLAYLIST</div>
+                             <div class="retro-title-bar-buttons">
+                                <button class="retro-minimize">-</button>
+                                <button class="retro-maximize">[]</button>
+                                <button class="retro-close">X</button>
+                            </div>
+                        </div>
+                        <div id="playlist" class="retro-playlist-content">
+                            <!-- Playlist items will be injected here by JS -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
 
@@ -79,7 +127,7 @@
     </div>
 </div>
 
-<script type="module" src="../scripts/main.js"></script>
+<script type="module" src="/scripts/music-player.js"></script>
 
 </body>
 </html>
