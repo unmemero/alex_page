@@ -23,8 +23,8 @@ ul.nav-list a:hover {
 }
 
 #update-log {
-    background: #b98b4ed5;
-    border: 1px solid #9e7f4f;
+    background: rgba(165, 145, 95, 0.75);
+    border: 1px solid rgba(165, 145, 95, 0.5);
     padding: 20px;
     margin: 0;
     color: #f0e6d2;
@@ -84,19 +84,19 @@ ul.nav-list a:hover {
 }
 
 .bio-title {
-    color: #9e7f4f;
+    color: rgba(165, 145, 95, 1.0);
 }
 
 #webmaster-desc {
     font-size: 0.8em; 
-    border: 1px solid #9e7f4f; 
+    border: 1px solid rgba(165, 145, 95, 0.5); 
     padding: 5px;
     min-height: 60px;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: #b98b4ed5;
-    color: #f0e6d2;
+    background: rgba(0, 0, 0, 0);
+    color: rgba(165, 145, 95, 1.0);
     font-family: Impact, sans-serif;
 }
 
@@ -108,10 +108,10 @@ ul.nav-list a:hover {
 }
 
 .playlist-item:hover {
-    background-color: #9e7f4f;
+    background-color: rgba(165, 145, 95, 1.0);
 }
 
 .playlist-item.active {
-    background-color: #9e7f4f;
+    background-color: rgba(165, 145, 95, 1.0);
     font-weight: bold;
 }
