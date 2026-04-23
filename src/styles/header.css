@@ -9,6 +9,7 @@ header {
     rgba(255, 240, 180, 0.254) 40%,  /* Warm golden glow */
     transparent 100%
   );
+  background-image: url(src/assets/images/header.jpeg);
   backdrop-filter: blur(12px) brightness(1.5);
   box-shadow: 0 0 30px rgba(255, 230, 150, 0.2);
   mix-blend-mode: screen;
