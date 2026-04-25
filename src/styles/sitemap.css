@@ -21,10 +21,10 @@
 }
 
 .sitemap-tree li a:hover {
-    color: #ebb55f;
+    color: rgba(165, 145, 95, 1.0);
     /* text-shadow: 0 0 5px rgba(255,128,0,0.6); */
     transform: scale(1.05);
-    text-shadow: 0 0 10px rgba(223, 117, 11, 0.9);
+    text-shadow: 0 0 10px rgba(165, 145, 95, 0.9);
 }
 
 .sitemap-tree li::before {
@@ -32,7 +32,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    border-left: 2px solid #d9a24f;
+    border-left: 2px solid rgba(165, 145, 95, 1.0);
     height: 100%;
     width: 10px;
 }
@@ -42,7 +42,7 @@
     position: absolute;
     left: 0;
     top: 20px;
-    border-top: 2px solid #d9a24f;
+    border-top: 2px solid rgba(165, 145, 95, 1.0);
     width: 18px;
 }
 
