@@ -115,3 +115,75 @@ ul.nav-list a:hover {
     background-color: rgba(165, 145, 95, 1.0);
     font-weight: bold;
 }
+
+/* Mini Player Styles */
+.mini-player-content {
+    background: rgba(165, 145, 95, 0.75);
+    border: 1px solid rgba(165, 145, 95, 0.5);
+    padding: 10px;
+    margin: 0;
+    color: #f0e6d2;
+    text-align: center;
+}
+
+#mini-track-info {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 3px;
+    border: 1px inset rgba(0,0,0,0.5);
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace; /* retro digital font */
+}
+
+.mini-player-controls {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.mini-btn {
+    background: #b98b4ed5;
+    border: 1px outset #5d4a31;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 2px 6px;
+}
+
+.mini-btn:hover {
+    background: #9e7f4f;
+}
+
+.mini-btn:active {
+    border: 1px inset #5d4a31;
+}
+
+/* Mini Playlist Styles */
+.mini-playlist-container {
+    margin-top: 10px;
+    text-align: left;
+    max-height: 70px;
+    overflow-y: auto;
+    border-top: 1px solid rgba(165, 145, 95, 0.5);
+    padding-top: 5px;
+    font-size: 0.85em;
+}
+
+.mini-playlist-item {
+    padding: 4px 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 1px dashed rgba(165, 145, 95, 0.3);
+}
+
+.mini-playlist-item:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.mini-playlist-item.active {
+    color: #00ff00;
+    font-weight: bold;
+}

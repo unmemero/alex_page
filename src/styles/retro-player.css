@@ -8,29 +8,31 @@
 }
 
 #retro-player {
-    transform: scale(2);
-    transform-origin: top left;
-    margin-bottom: 300px; /* Add margin to prevent overlap */
+    transform: scale(1.8);
+    transform-origin: top center;
+    margin: 40px auto 250px auto; /* Center horizontally and add proper spacing */
     display: flex;
     flex-direction: column;
     width: 275px; /* Default width of retro */
     font-family: 'Wina-font', sans-serif;
     border: 1px solid #000;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    box-shadow: 15px 15px 25px rgba(0,0,0,0.6); /* More prominent, realistic shadow */
+    image-rendering: pixelated; /* Keeps the pixel-art/retro font aesthetic crisp */
+    -webkit-font-smoothing: none;
 }
 
 .retro-main-window, .retro-playlist-window {
-    background-color: #d6d6d6;
-    border: 1px solid #fff;
-    border-right-color: #848484;
-    border-bottom-color: #848484;
+    background-color: #b98b4e;
+    border: 1px solid #dfc39a;
+    border-right-color: #5d4a31;
+    border-bottom-color: #5d4a31;
     display: flex;
     flex-direction: column;
 }
 
 .retro-title-bar {
-    background: linear-gradient(to right, #000080, #1084d0);
-    color: #fff;
+    background: linear-gradient(to right, #5d4a31, #9e7f4f);
+    color: #f0e6d2;
     padding: 2px 4px;
     display: flex;
     justify-content: space-between;
@@ -42,10 +44,11 @@
 }
 
 .retro-title-bar-buttons button {
-    background-color: #c0c0c0;
-    border: 1px solid #fff;
-    border-right-color: #404040;
-    border-bottom-color: #404040;
+    background-color: #a5915f;
+    border: 1px solid #dfc39a;
+    border-right-color: #3e301d;
+    border-bottom-color: #3e301d;
+    color: #f0e6d2;
     width: 10px;
     height: 10px;
     font-size: 8px;
@@ -55,13 +58,19 @@
     cursor: pointer;
 }
 
+.retro-title-bar-buttons button:active {
+    border: 1px solid #3e301d;
+    border-right-color: #dfc39a;
+    border-bottom-color: #dfc39a;
+}
+
 .retro-content {
     padding: 8px;
-    background-color: #c6c6c6;
+    background-color: #a5915f;
 }
 
 .retro-display {
-    background-color: #000;
+    background-color: #1a110a;
     color: #00ff00;
     padding: 4px 6px;
     margin-bottom: 8px;
@@ -70,6 +79,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: 1px inset rgba(0,0,0,0.5);
 }
 
 .retro-track-info {
@@ -89,18 +99,26 @@
 }
 
 .retro-btn {
-    background-color: #c0c0c0;
-    border: 1px solid #fff;
-    border-right-color: #404040;
-    border-bottom-color: #404040;
+    background: #b98b4ed5;
+    border: 1px outset #5d4a31;
+    color: white;
     width: 23px;
     height: 18px;
     font-size: 10px;
     cursor: pointer;
 }
 
+.retro-btn:hover {
+    background: #9e7f4f;
+}
+
+.retro-btn:active {
+    border: 1px inset #5d4a31;
+}
+
 .retro-sliders {
     font-size: 8px;
+    color: #f0e6d2;
 }
 
 #volume-slider {
@@ -108,9 +126,9 @@
 }
 
 .retro-progress-container {
-    background: #000;
+    background: #1a110a;
     height: 6px;
-    border: 1px solid #404040;
+    border: 1px inset rgba(0,0,0,0.5);
     margin-top: 4px;
 }
 
@@ -125,12 +143,13 @@
 }
 
 .retro-playlist-content {
-    background-color: #000;
+    background-color: #1a110a;
     color: #00ff00;
     height: 100px;
     overflow-y: auto;
     font-size: 8px;
     padding: 2px;
+    border: 1px inset rgba(0,0,0,0.5);
 }
 
 .playlist-item {
@@ -139,7 +158,12 @@
     white-space: nowrap;
 }
 
+.playlist-item:hover {
+    background-color: rgba(165, 145, 95, 0.4);
+}
+
 .playlist-item.active {
-    background-color: #000080;
-    color: #fff;
+    background-color: #9e7f4f;
+    color: #f0e6d2;
+    font-weight: bold;
 }
