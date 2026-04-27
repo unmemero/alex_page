@@ -1,4 +1,4 @@
-# Entry #2
+# Entry 2
 
 ![placeholder2.jpg](placeholder2.jpg)
 ---
