@@ -43,6 +43,21 @@
                     Loading updates...
                 </div>
             </div>
+
+            <div class="box">
+                <div class="box-header">Music Player</div>
+                <div class="box-content mini-player-content">
+                    <div id="mini-track-info">
+                        <marquee scrollamount="3" id="mini-track-title">Loading...</marquee>
+                    </div>
+                    <div class="mini-player-controls">
+                        <button id="mini-prev-btn" class="mini-btn">⏮</button>
+                        <button id="mini-play-pause-btn" class="mini-btn">▶</button>
+                        <button id="mini-next-btn" class="mini-btn">⏭</button>
+                    </div>
+                    <div id="mini-playlist" class="mini-playlist-container"></div>
+                </div>
+            </div>
         </aside>
 
         <!-- Center Content -->
@@ -69,7 +84,7 @@
                             </div>
                             <div class="retro-controls">
                                 <button id="prev-btn" class="retro-btn">⏮</button>
-                                <button id="play-btn" class="retro-btn">⏯</button>
+                                <button id="play-btn" class="retro-btn">▶</button>
                                 <button id="pause-btn" class="retro-btn">⏸</button>
                                 <button id="stop-btn" class="retro-btn">⏹</button>
                                 <button id="next-btn" class="retro-btn">⏭</button>
@@ -128,6 +143,7 @@
 </div>
 
 <script type="module" src="/scripts/music-player.js"></script>
+<script type="module" src="/scripts/mini-player.js"></script>
 
 </body>
 </html>

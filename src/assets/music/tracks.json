@@ -2,8 +2,14 @@
     {
         "metaData": {
             "artist": "Artist Name",
-            "title": "Song Title"
+            "title": "track name"
         },
-        "url": "/assets/music/your-song.mp3"
+        "url": "/assets/music/track.mp3"
+    }, {
+        "metaData":{
+            "artist": "Artist",
+            "title": "Song Name"
+        },
+        "url": "/assets/music/track_2.mp3"
     }
 ]
