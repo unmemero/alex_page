@@ -132,7 +132,7 @@ ul.nav-list a:hover {
     background: rgba(0, 0, 0, 0.2);
     padding: 3px;
     border: 1px inset rgba(0,0,0,0.5);
-    color: #00ff00;
+    color: rgba(200, 200, 250, 1);
     font-family: 'Courier New', Courier, monospace; /* retro digital font */
 }
 
@@ -184,6 +184,6 @@ ul.nav-list a:hover {
 }
 
 .mini-playlist-item.active {
-    color: #00ff00;
+    color: rgba(200, 200, 250, 1);
     font-weight: bold;
 }

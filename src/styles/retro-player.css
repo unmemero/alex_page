@@ -71,7 +71,7 @@
 
 .retro-display {
     background-color: #1a110a;
-    color: #00ff00;
+    color: rgba(200,200,250,1.0);
     padding: 4px 6px;
     margin-bottom: 8px;
     font-size: 8px;
@@ -133,7 +133,7 @@
 }
 
 .retro-progress-bar {
-    background: #00ff00;
+    background: rgba(200,200,250,1.0);
     height: 100%;
     width: 0%;
 }
@@ -144,7 +144,7 @@
 
 .retro-playlist-content {
     background-color: #1a110a;
-    color: #00ff00;
+    color: rgba(200,200,250,1.0);
     height: 100px;
     overflow-y: auto;
     font-size: 8px;
