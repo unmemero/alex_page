@@ -1,5 +1,5 @@
 <form id="contact-form-element" class="contact-form">
-    <h1>Contact</h1>
+    <12>Contact</h1>
 
     <div class="form-fields">
         <div class="form-group">
