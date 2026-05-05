@@ -38,7 +38,7 @@ function initMiniPlayer() {
                 
                 currentTrackIndex = trackIndex;
                 const track = tracks[trackIndex];
-                const trackName = `${track.metaData.artist} - ${track.metaData.title}`;
+                const trackName = `${track.metaData.title}`;
                 trackTitle.textContent = trackName;
                 trackTitle.title = trackName;
                 audio.src = track.url;
@@ -65,7 +65,7 @@ function initMiniPlayer() {
         tracks.forEach((track, index) => {
             const item = document.createElement('div');
             item.className = 'mini-playlist-item';
-            const trackName = `${index + 1}. ${track.metaData.artist} - ${track.metaData.title}`;
+            const trackName = `${index + 1}. ${track.metaData.title}`;
             item.textContent = trackName;
             item.title = trackName;
             item.addEventListener('click', () => {
@@ -91,7 +91,7 @@ function initMiniPlayer() {
     function loadTrack(index) {
         currentTrackIndex = index;
         const track = tracks[index];
-        const trackName = `${track.metaData.artist} - ${track.metaData.title}`;
+        const trackName = `${track.metaData.title}`;
         trackTitle.textContent = trackName;
         trackTitle.title = trackName;
         audio.src = track.url;
@@ -126,7 +126,7 @@ function initMiniPlayer() {
     function playTrack(index) {
         currentTrackIndex = index;
         const track = tracks[index];
-        const trackName = `${track.metaData.artist} - ${track.metaData.title}`;
+        const trackName = `${track.metaData.title}`;
         trackTitle.textContent = trackName;
         trackTitle.title = trackName;
         audio.src = track.url;

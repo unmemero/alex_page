@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const playlistContainer = document.getElementById('playlist');
     const trackTitle = document.getElementById('track-title');
-    const trackArtist = document.getElementById('track-artist');
     const timeDisplay = document.getElementById('time-display');
     const playBtn = document.getElementById('play-btn');
     const pauseBtn = document.getElementById('pause-btn');
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         tracks.forEach((track, index) => {
             const item = document.createElement('div');
             item.className = 'playlist-item';
-            item.textContent = `${index + 1}. ${track.metaData.artist} - ${track.metaData.title}`;
+            item.textContent = `${index + 1}. ${track.metaData.title}`;
             item.addEventListener('click', () => {
                 playTrack(index);
             });
@@ -44,7 +43,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         currentTrackIndex = index;
         const track = tracks[index];
         trackTitle.textContent = track.metaData.title;
-        trackArtist.textContent = track.metaData.artist;
         audio.src = track.url;
         updatePlaylistUI();
     }
