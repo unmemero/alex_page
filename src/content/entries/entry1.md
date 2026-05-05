@@ -1,5 +1,6 @@
 
-![Journal1A.png] (Journal1A.png) ![Journal1B.png] (Journal 1B.png) ![Journal1C.png] (Journa1C.png)
+![Journal1A.png](placeholder1.jpg)![Journal1B.png](placeholder1.jpg)![Journal1C.png](placeholder1.jpg)
+
 ---
 
 Sometimes I try to count the stars. I find Her first, then count the stars that encircle Her. 
