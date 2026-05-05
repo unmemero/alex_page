@@ -9,10 +9,13 @@ header {
     rgba(255, 240, 180, 0.254) 40%,  /* Warm golden glow */
     transparent 100%
   );
-  background-image: url(src/assets/images/header.jpeg);
+  background-image: url('/assets/images/header.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   backdrop-filter: blur(12px) brightness(1.5);
   box-shadow: 0 0 30px rgba(255, 230, 150, 0.2);
-  mix-blend-mode: screen;
+  /* mix-blend-mode: screen; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,6 +27,6 @@ header h1 {
   font-family: "Alice", serif;
   font-style: italic;
   font-size: 4.5em; /* Increased font size */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
   font-weight: lighter;
 }
