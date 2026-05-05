@@ -1,5 +1,5 @@
 
-![Journal1A.png](placeholder1.jpg)![Journal1B.png](placeholder1.jpg)![Journal1C.png](placeholder1.jpg)
+![Journal1A](/assets/images/Journals/Journal1A.png)![Journal1B](/assets/images/Journals/Journal1B)![Journal1C](/assets/images/Journals/Journal1C)
 
 ---
 
