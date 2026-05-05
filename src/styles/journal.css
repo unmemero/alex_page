@@ -20,3 +20,38 @@
     color: #555;
     margin-bottom: 15px;
 }
+
+.journal-entry .image-container {
+    display: inline-block;
+    margin: 5px;
+    vertical-align: top;
+}
+
+.journal-entry .image-container img {
+    max-width: 150px;
+    height: auto;
+    border: 2px solid #5d4a31;
+    cursor: zoom-in;
+}
+
+.journal-entry .image-container img:hover {
+    border-color: #333;
+}
+
+/* Enlarged state triggered by JS */
+.journal-entry .image-container img.enlarged {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 9999;
+    border: 4px solid #fdf5e6;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.8);
+    cursor: zoom-out;
+}
+
+.journal-entry .image-container hr {
+    display: none;
+}

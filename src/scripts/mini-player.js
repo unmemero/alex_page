@@ -47,7 +47,15 @@ function initMiniPlayer() {
                 const playPromise = audio.play();
                 if (playPromise !== undefined) {
                     playPromise.catch(error => {
-                        console.log('Autoplay prevented by browser:', error);
+                        console.log('Autoplay prevented by browser, waiting for interaction:', error);
+                        const playOnInteract = () => {
+                            audio.play().then(() => {
+                                document.removeEventListener('click', playOnInteract);
+                                document.removeEventListener('keydown', playOnInteract);
+                            }).catch(e => console.log('Playback still prevented:', e));
+                        };
+                        document.addEventListener('click', playOnInteract);
+                        document.addEventListener('keydown', playOnInteract);
                     });
                 }
             } else {

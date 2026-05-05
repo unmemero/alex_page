@@ -1,5 +1,7 @@
 
-![Journal4A.png] (Journal4A.png) ![Journal4B.png] (Journal 4B.png) ![Journal4C.png] (Journa4C.png)
+![Journal4A.png](/assets/images/Journals/Journal4A.png)
+![Journal4B.png](/assets/images/Journals/Journal4B.png)
+![Journal4C.png](/assets/images/Journals/Journal4C.png)
 ---
 
 Just below my feet is an impossibly long rope-ladder that I have to climb. It sways gently in the wind. The wooden pegs thud against the ship’s boards monotonously. It mocks me. There is supposed to be a rowboat in the water somewhere, but the ship is so tall and the sea is so wide that I can't seem to find the boat beneath me. I am standing and holding the railings with my entire hand. My knees can’t seem to obey, and I have to sit on them for a moment.  I place my hands on the deck and peer down a second time. I still can’t quite seem to locate the boat. I turn over my shoulder and look back onboard the ship. 

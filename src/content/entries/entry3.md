@@ -1,5 +1,6 @@
 
-![Journal3A.png] (Journal2A.png) ![Journal3B.png] (Journal 3B.png)
+![Journal3A.png](/assets/images/Journals/Journal3A.png)
+![Journal3B.png](/assets/images/Journals/Journal3B.png)
 ---
 
 Just the other day another vessel passed by our settlement. We’ve been seeing more boats than we did when we first arrived. They’re always large enough to see without having to stand by the beach or on the edge of the bluff. I wondered how many people were on these boats. I wonder if any of them were guided here by Lucet. 

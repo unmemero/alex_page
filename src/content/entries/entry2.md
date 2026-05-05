@@ -1,5 +1,6 @@
 
-![Journal2A.png] (Journal2A.png) ![Journal2B.png] (Journal 2B.png)
+![Journal2A.png](/assets/images/Journals/Journal2A.png)
+![Journal2B.png](/assets/images/Journals/Journal2B.png)
 ---
 
 During the winter months Brother Karl lost his life. He was ill and wasting. We buried him underneath a tree by his yellow home. 

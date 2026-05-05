@@ -11,10 +11,16 @@ export function parseMarkdown(markdown) {
             const url = line.match(/\((.*)\)/)[1];
             let imgSrc;
             if (url.startsWith('http')) {
-                //may need to change this to pull images dynamically later from the bucket
+                imgSrc = url;
+            } else if (url.startsWith('/')) {
                 imgSrc = url;
             } else {
-                imgSrc = `./assets/images/${url}`;
+                const assetsIndex = url.indexOf('assets/');
+                if (assetsIndex !== -1) {
+                    imgSrc = '/' + url.substring(assetsIndex);
+                } else {
+                    imgSrc = `/assets/images/${url}`;
+                }
             }
             html += `<div class="image-container">`;
             html += `<img src="${imgSrc}" alt="${alt}"><br />`;

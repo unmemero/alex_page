@@ -26,6 +26,18 @@ async function loadBlogPosts() {
                     const postContainer = document.createElement('div');
                     postContainer.className = 'blog-post';
                     postContainer.innerHTML = htmlContent;
+                    
+                    const images = postContainer.querySelectorAll('img');
+                    images.forEach(img => {
+                        img.addEventListener('click', (e) => {
+                            const isEnlarged = img.classList.contains('enlarged');
+                            document.querySelectorAll('img.enlarged').forEach(el => el.classList.remove('enlarged'));
+                            if (!isEnlarged) {
+                                img.classList.add('enlarged');
+                            }
+                            e.stopPropagation();
+                        });
+                    });
                     mainContent.appendChild(postContainer);
                 }
             } catch (error) {
@@ -64,6 +76,18 @@ async function loadJournalEntries() {
                     const entryContainer = document.createElement('div');
                     entryContainer.className = 'journal-entry';
                     entryContainer.innerHTML = htmlContent;
+                    
+                    const images = entryContainer.querySelectorAll('img');
+                    images.forEach(img => {
+                        img.addEventListener('click', (e) => {
+                            const isEnlarged = img.classList.contains('enlarged');
+                            document.querySelectorAll('img.enlarged').forEach(el => el.classList.remove('enlarged'));
+                            if (!isEnlarged) {
+                                img.classList.add('enlarged');
+                            }
+                            e.stopPropagation();
+                        });
+                    });
                     mainContent.appendChild(entryContainer);
                 }
             } catch (error) {
@@ -87,4 +111,15 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (path.includes('/pages/journal')) { // Adjusted path check
         loadJournalEntries();
     }
+
+    // Global listeners to close enlarged images
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('img.enlarged').forEach(el => el.classList.remove('enlarged'));
+        }
+    });
+
+    document.addEventListener('click', () => {
+        document.querySelectorAll('img.enlarged').forEach(el => el.classList.remove('enlarged'));
+    });
 });
