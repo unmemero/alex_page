@@ -1,0 +1,7 @@
+.gallery  img{
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    margin-bottom: 50px;
+}
