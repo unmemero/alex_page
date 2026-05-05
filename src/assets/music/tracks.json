@@ -1,15 +1,33 @@
 [
     {
         "metaData": {
-            "artist": "Artist Name",
-            "title": "track name"
+            "artist": "Alex Vela",
+            "title": "Track 1"
         },
-        "url": "/assets/music/track.mp3"
+        "url": "/assets/music/track1.mp3"
     }, {
         "metaData":{
-            "artist": "Artist",
-            "title": "Song Name"
+            "artist": "Alex Vela",
+            "title": "Track 2"
         },
-        "url": "/assets/music/track_2.mp3"
+        "url": "/assets/music/track2.mp3"
+    }, {
+        "metaData":{
+            "artist": "Alex Vela",
+            "title": "Track 3"
+        },
+        "url": "/assets/music/track3.mp3"
+    }, {
+        "metaData":{
+            "artist": "Alex Vela",
+            "title": "Track 4"
+        },
+        "url": "/assets/music/track4.mp3"
+    }, {
+        "metaData":{
+            "artist": "Alex Vela",
+            "title": "Track 5"
+        },
+        "url": "/assets/music/track5.mp3"
     }
 ]

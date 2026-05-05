@@ -93,7 +93,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     audio.addEventListener('timeupdate', () => {
-        const percentage = (audio.currentTime / audio.duration) * 100;
+        let percentage = 0;
+        if (isFinite(audio.duration) && audio.duration > 0) {
+            percentage = (audio.currentTime / audio.duration) * 100;
+        } else {
+            percentage = 50; // Hardcode to 50% if duration is infinite/NaN
+        }
         progressBar.style.width = `${percentage}%`;
         timeDisplay.textContent = formatTime(audio.currentTime);
     });

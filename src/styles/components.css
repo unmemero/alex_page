@@ -159,6 +159,25 @@ ul.nav-list a:hover {
     border: 1px inset #5d4a31;
 }
 
+/* Mini Volume Control */
+.mini-volume-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 8px;
+}
+
+.mini-volume-control label {
+    font-size: 1.1em;
+}
+
+.mini-volume-control input[type=range] {
+    width: 70%;
+    cursor: pointer;
+    accent-color: #9e7f4f;
+}
+
 /* Mini Playlist Styles */
 .mini-playlist-container {
     margin-top: 10px;

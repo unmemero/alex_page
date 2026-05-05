@@ -4,6 +4,7 @@ function initMiniPlayer() {
     const prevBtn = document.getElementById('mini-prev-btn');
     const nextBtn = document.getElementById('mini-next-btn');
     const playlistContainer = document.getElementById('mini-playlist');
+    const volumeSlider = document.getElementById('mini-volume-slider');
     
     // Ensure the mini player elements exist on the page
     if (!trackTitle || !playPauseBtn || !prevBtn || !nextBtn) return;
@@ -12,6 +13,19 @@ function initMiniPlayer() {
     let currentTrackIndex = 0;
     let isPlaying = false;
     const audio = new Audio();
+    if (volumeSlider) {
+        audio.volume = volumeSlider.value;
+    }
+
+    function getTrackIndexForPage() {
+        const path = window.location.pathname.toLowerCase();
+        if (path.includes('about')) return 1;
+        if (path.includes('sitemap') || path.includes('contact')) return 2;
+        if (path.includes('journal')) return 3;
+        if (path.includes('blog')) return 4;
+        if (path.includes('gallery')) return 5;
+        return 0;
+    }
 
     async function loadTracks() {
         try {
@@ -19,7 +33,23 @@ function initMiniPlayer() {
             tracks = await response.json();
             if(tracks.length > 0) {
                 renderPlaylist();
-                loadTrack(0);
+                let trackIndex = getTrackIndexForPage();
+                if (trackIndex >= tracks.length) trackIndex = 0;
+                
+                currentTrackIndex = trackIndex;
+                const track = tracks[trackIndex];
+                const trackName = `${track.metaData.artist} - ${track.metaData.title}`;
+                trackTitle.textContent = trackName;
+                trackTitle.title = trackName;
+                audio.src = track.url;
+                updatePlaylistUI();
+                
+                const playPromise = audio.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log('Autoplay prevented by browser:', error);
+                    });
+                }
             } else {
                 trackTitle.textContent = "No tracks found.";
             }
@@ -35,7 +65,9 @@ function initMiniPlayer() {
         tracks.forEach((track, index) => {
             const item = document.createElement('div');
             item.className = 'mini-playlist-item';
-            item.textContent = `${index + 1}. ${track.metaData.artist} - ${track.metaData.title}`;
+            const trackName = `${index + 1}. ${track.metaData.artist} - ${track.metaData.title}`;
+            item.textContent = trackName;
+            item.title = trackName;
             item.addEventListener('click', () => {
                 playTrack(index);
             });
@@ -59,7 +91,9 @@ function initMiniPlayer() {
     function loadTrack(index) {
         currentTrackIndex = index;
         const track = tracks[index];
-        trackTitle.textContent = `${track.metaData.artist} - ${track.metaData.title}`;
+        const trackName = `${track.metaData.artist} - ${track.metaData.title}`;
+        trackTitle.textContent = trackName;
+        trackTitle.title = trackName;
         audio.src = track.url;
         updatePlaylistUI();
         
@@ -70,14 +104,10 @@ function initMiniPlayer() {
 
     function togglePlay() {
         if(tracks.length === 0) return;
-        if (isPlaying) {
-            audio.pause();
-            isPlaying = false;
-            playPauseBtn.textContent = '▶';
-        } else {
+        if (audio.paused) {
             audio.play();
-            isPlaying = true;
-            playPauseBtn.textContent = '⏸';
+        } else {
+            audio.pause();
         }
     }
 
@@ -96,17 +126,33 @@ function initMiniPlayer() {
     function playTrack(index) {
         currentTrackIndex = index;
         const track = tracks[index];
-        trackTitle.textContent = `${track.metaData.artist} - ${track.metaData.title}`;
+        const trackName = `${track.metaData.artist} - ${track.metaData.title}`;
+        trackTitle.textContent = trackName;
+        trackTitle.title = trackName;
         audio.src = track.url;
-        audio.play();
-        isPlaying = true;
-        playPauseBtn.textContent = '⏸';
+        audio.play().catch(e => console.log('Playback prevented:', e));
         updatePlaylistUI();
     }
 
     audio.addEventListener('ended', () => {
         nextBtn.click();
     });
+
+    audio.addEventListener('play', () => {
+        isPlaying = true;
+        playPauseBtn.textContent = '⏸';
+    });
+
+    audio.addEventListener('pause', () => {
+        isPlaying = false;
+        playPauseBtn.textContent = '▶';
+    });
+
+    if (volumeSlider) {
+        volumeSlider.addEventListener('input', (e) => {
+            audio.volume = e.target.value;
+        });
+    }
 
     loadTracks();
 }
