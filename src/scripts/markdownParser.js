@@ -30,7 +30,11 @@ export function parseMarkdown(markdown) {
             const date = line.substring(3).trim();
             html = html.replace('<hr />', `<p>${date}</p><hr />`);
         } else if (line.trim() !== '') {
-            html += `<p>${line}</p>`;
+            if (line.trim().startsWith('<')) {
+                html += line + '\n';
+            } else {
+                html += `<p>${line}</p>`;
+            }
         }
     }
     return html;

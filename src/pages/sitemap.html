@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Searching for Lucet - Sitemap</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/cursors.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+    <script type="importmap">
+        {
+            "imports": {
+                "dompurify": "https://cdn.jsdelivr.net/npm/dompurify@3.4.0/dist/purify.es.mjs"
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div id="wrapper">
+    <header>
+        <h1>Searching for Lucet</h1>
+    </header>
+
+    <nav class="top-nav">
+        <a href="/index.html">Home</a>
+        <a href="/pages/about.html">About</a>
+        <a href="/pages/blog.html">Blog</a>
+        <a href="/pages/journal.html">Journal Entries</a>
+        <a href="/pages/contact.html">Contact</a>
+    </nav>
+
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <aside class="column">
+            <div class="box">
+                <div class="box-header" id="second-nav">Navigation</div>
+                <div class="box-content">
+                    <ul class="nav-list">
+                        <li><a href="/pages/blog.html">My Blog</a></li>
+                        <li><a href="/pages/gallery.html">My Gallery</a></li>
+                        <li><a href="/pages/music.html">My Music</a></li>
+                        <li><a href="/pages/sitemap.html">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-header">Update Log</div>
+                <div id="update-log" class="box-content" style="height: 150px; overflow-y: auto;">
+                    Loading updates...
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-header">Mini Player</div>
+                <div class="box-content mini-player-content">
+                    <div id="mini-track-info">
+                        <marquee scrollamount="3" id="mini-track-title">Loading...</marquee>
+                    </div>
+                    <div class="mini-player-controls">
+                        <button id="mini-prev-btn" class="mini-btn">⏮</button>
+                        <button id="mini-play-pause-btn" class="mini-btn">▶</button>
+                        <button id="mini-next-btn" class="mini-btn">⏭</button>
+                    </div>
+                    <div class="mini-volume-control">
+                        <label for="mini-volume-slider">VOL</label>
+                        <input type="range" id="mini-volume-slider" min="0" max="1" step="0.01" value="0.5">
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center Content -->
+        <main id="main-content">
+            <h2 id="page-title">Sitemap</h2>
+            <div id="page-body">
+                <!-- Sitemap content will be loaded here -->
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="column">
+            <div class="box">
+                <div class="box-content profile-box">
+                    <!--Placeholder for homer's profile picture -->
+                    <div id="profile-pic"><img src="/assets/images/webmaster.jpeg" alt=""></div>
+                    <p class="bio-title"><strong>Webmaster</strong></p>
+                    <div id="webmaster-desc">
+                        Welcome to Searching for Lucet! Please see the About page if you're new or the Blog page for updates!
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-header">Buttons</div>
+                <div class="box-content button-container">
+                    <button id="btn1" class="main-page-button"></button>
+                    <button id="btn2" class="main-page-button"></button>
+                    <button id="btn3" class="main-page-button"></button>
+                    <button id="btn4" class="main-page-button"></button>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<script type="module" src="/scripts/main.js"></script>
+<script type="module" src="/scripts/mini-player.js"></script>
+
+</body>
+</html>

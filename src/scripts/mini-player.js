@@ -44,19 +44,23 @@ function initMiniPlayer() {
                 audio.src = track.url;
                 updatePlaylistUI();
                 
-                const playPromise = audio.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                        console.log('Autoplay prevented by browser, waiting for interaction:', error);
-                        const playOnInteract = () => {
-                            audio.play().then(() => {
-                                document.removeEventListener('click', playOnInteract);
-                                document.removeEventListener('keydown', playOnInteract);
-                            }).catch(e => console.log('Playback still prevented:', e));
-                        };
-                        document.addEventListener('click', playOnInteract);
-                        document.addEventListener('keydown', playOnInteract);
-                    });
+                const path = window.location.pathname.toLowerCase();
+                if (!path.includes('music')) {
+                    const playPromise = audio.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(error => {
+                            if (error.name === 'NotAllowedError') {
+                                console.log('Autoplay prevented by browser, waiting for interaction:', error);
+                                const playOnInteract = () => {
+                                    document.removeEventListener('click', playOnInteract);
+                                    document.removeEventListener('keydown', playOnInteract);
+                                    audio.play().catch(e => console.log('Playback still prevented:', e));
+                                };
+                                document.addEventListener('click', playOnInteract);
+                                document.addEventListener('keydown', playOnInteract);
+                            }
+                        });
+                    }
                 }
             } else {
                 trackTitle.textContent = "No tracks found.";
