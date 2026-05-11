@@ -1,4 +1,4 @@
-import { loadContent, loadBlogPosts, loadJournalEntries } from './contentLoader.js';
+import { loadContent, loadBlogPosts, loadJournalEntries, loadHomepageContent } from './contentLoader.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const topNavLinks = document.querySelectorAll('.top-nav a');
@@ -38,6 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (pageName && pageName !== 'index') {
         loadContent(pageName);
     } else {
-        loadContent('home');
+        loadHomepageContent();
     }
 });

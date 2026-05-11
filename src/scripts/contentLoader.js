@@ -79,3 +79,61 @@ export async function loadJournalEntries() {
         document.getElementById('main-content').innerHTML += '<p>Error loading journal entries.</p>';
     }
 }
+
+export async function loadHomepageContent() {
+    try {
+        // Load newest journal
+        const journalResponse = await fetch(`${contentPath}/entries/entries.txt`);
+        if (journalResponse.ok) {
+            const text = await journalResponse.text();
+            const entries = text.split('\n').filter(e => e.trim() !== '');
+            if (entries.length > 0) {
+                const entryFile = entries[entries.length - 1]; // Use the last one as newest based on naming 1..4
+                const entryResponse = await fetch(`${contentPath}/entries/${entryFile}.md`);
+                if (entryResponse.ok) {
+                    const markdown = await entryResponse.text();
+                    const htmlContent = parseMarkdown(markdown);
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = htmlContent;
+                    const textContent = tempDiv.textContent.trim().substring(0, 80) + '...';
+                    
+                    document.getElementById('hp-m-c-s1-top-journal').innerHTML = `
+                        <div class="journal-snippet">
+                            <p class="journal-meta"><strong>Webmaster ⭐</strong><br>7292 days ago:</p>
+                            <p class="journal-text">${textContent}</p>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        // Load newest blog post
+        const blogResponse = await fetch(`${contentPath}/posts/posts.txt`);
+        if (blogResponse.ok) {
+            const text = await blogResponse.text();
+            const posts = text.split('\n').filter(p => p.trim() !== '');
+            if (posts.length > 0) {
+                const postFile = posts[0]; // First is newest for posts
+                const postResponse = await fetch(`${contentPath}/posts/${postFile}.md`);
+                if (postResponse.ok) {
+                    const markdown = await postResponse.text();
+                    const htmlContent = parseMarkdown(markdown);
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = htmlContent;
+                    const dateHeader = tempDiv.querySelector('h1');
+                    const dateText = dateHeader ? dateHeader.textContent : 'Latest:';
+                    if (dateHeader) dateHeader.remove();
+                    
+                    const textContent = tempDiv.textContent.trim().substring(0, 150) + '...';
+
+                    document.getElementById('hp-m-c-s2-blog').innerHTML = `
+                        <h3>Latest Blog</h3>
+                        <p><strong>${dateText}:</strong> ${textContent}</p>
+                    `;
+                }
+            }
+        }
+    } catch (error) {
+        console.error('Failed to load homepage content:', error);
+    }
+}
