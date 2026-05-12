@@ -19,13 +19,11 @@ function initMiniPlayer() {
 
     function getTrackIndexForPage() {
         const path = window.location.pathname.toLowerCase();
-        if (path.includes('home')) return 1;
-        if (path.includes('about')) return 2;
-        if (path.includes('sitemap')) return 3;
-        if (path.includes('contact')) return 3;
-        if (path.includes('journal')) return 4;
-        if (path.includes('blog')) return 5;
-        if (path.includes('gallery')) return 6;
+        if (path.includes('about')) return 1;
+        if (path.includes('sitemap') || path.includes('contact')) return 2;
+        if (path.includes('journal')) return 3;
+        if (path.includes('blog')) return 4;
+        if (path.includes('gallery')) return 5;
         return 0;
     }
 
