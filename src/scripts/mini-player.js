@@ -79,7 +79,7 @@ function initMiniPlayer() {
         tracks.forEach((track, index) => {
             const item = document.createElement('div');
             item.className = 'mini-playlist-item';
-            const trackName = `${index}. ${track.metaData.title}`;
+            const trackName = `${index + 1}. ${track.metaData.title}`;
             item.textContent = trackName;
             item.title = trackName;
             item.addEventListener('click', () => {
