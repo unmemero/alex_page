@@ -32,5 +32,7 @@
     <img src="/assets/images/Lucet Gallery/Lucet - 28 of 30.jpeg" alt="Photo 28">
     <img src="/assets/images/Lucet Gallery/Lucet - 29 of 30.jpeg" alt="Photo 29">
     <img src="/assets/images/Lucet Gallery/Lucet - 30 of 30.jpeg" alt="Photo 30">
+    <img src="/assets/images/Lucet Gallery/Lucet - 31 of 30.jpeg" alt="Photo 31">
+    <img src="/assets/images/Lucet Gallery/Lucet - 32 of 30.jpeg" alt="Photo 32">
   </div>
 </div>
