@@ -1,4 +1,8 @@
 
+![Journal6A.png](/assets/images/Journals/Journal6A.png)
+![Journal6B.png](/assets/images/Journals/Journal6B.png)
+![Journal6C.png](/assets/images/Journals/Journal6C.png)
+![Journal6D.png](/assets/images/Journals/Journal6D.png)
 ---
 
 Reverend Thomas delivered an impassioned sermon this evening. He said that our time, which has been spent suffering and in pain, will all be forgotten soon. We have been on this miserable plot for almost a decade, and as God proclaimed during the tenth winter Lucet’s holy light will clean our slate and bring us to our knees- repenting- and soon we will be nothing. 

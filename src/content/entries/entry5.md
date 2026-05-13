@@ -1,4 +1,6 @@
 
+![Journal5A.png](/assets/images/Journals/Journal5A.png)
+![Journal5B.png](/assets/images/Journals/Journal5B.png)
 ---
 
 When I dream, I do not dream of this place.
