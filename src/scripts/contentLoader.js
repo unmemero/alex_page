@@ -99,8 +99,8 @@ export async function loadHomepageContent() {
                     
                     document.getElementById('hp-m-c-s1-top-journal').innerHTML = `
                         <div class="journal-snippet">
-                            <p class="journal-meta"><strong>Webmaster ⭐</strong><br>7292 days ago:</p>
-                            <p class="journal-text">${textContent}</p>
+                            <p class="journal-meta"><strong>Webmaster ⭐</strong><br>7305 days ago:</p>
+                            <p Headed to Miller Creek again, I'm so close I know it...</p>
                         </div>
                     `;
                 }
