@@ -82,30 +82,6 @@ export async function loadJournalEntries() {
 
 export async function loadHomepageContent() {
     try {
-        // Load newest journal
-        const journalResponse = await fetch(`${contentPath}/entries/entries.txt`);
-        if (journalResponse.ok) {
-            const text = await journalResponse.text();
-            const entries = text.split('\n').filter(e => e.trim() !== '');
-            if (entries.length > 0) {
-                const entryFile = entries[entries.length - 1]; // Use the last one as newest based on naming 1..4
-                const entryResponse = await fetch(`${contentPath}/entries/${entryFile}.md`);
-                if (entryResponse.ok) {
-                    const markdown = await entryResponse.text();
-                    const htmlContent = parseMarkdown(markdown);
-                    const tempDiv = document.createElement('div');
-                    tempDiv.innerHTML = htmlContent;
-                    const textContent = tempDiv.textContent.trim().substring(0, 80) + '...';
-                    
-                    document.getElementById('hp-m-c-s1-top-journal').innerHTML = `
-                        <div class="journal-snippet">
-                            <p class="journal-meta"><strong>Webmaster ⭐</strong><br>7305 days ago:</p>
-                            <p Headed to Miller Creek again, I'm so close I know it...</p>
-                        </div>
-                    `;
-                }
-            }
-        }
 
         // Load newest blog post
         const blogResponse = await fetch(`${contentPath}/posts/posts.txt`);
