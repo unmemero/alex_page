@@ -169,8 +169,37 @@ function initMiniPlayer() {
     loadTracks();
 }
 
+function initDownloadButtons() {
+    const btn1 = document.getElementById('btn1');
+    const btn2 = document.getElementById('btn2');
+    if (btn1) {
+        btn1.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.href = '/assets/downloadable/UmVkZW1wdG9yIGdsb3Jpb3N1cw0KRGV1cyBhZXRlcm51cw0KSW1wZXJhdG9yIG9tbmlwb3RlbnM=.mid';
+            link.download = 'UmVkZW1wdG9yIGdsb3Jpb3N1cw0KRGV1cyBhZXRlcm51cw0KSW1wZXJhdG9yIG9tbmlwb3RlbnM=.mid';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    }
+    if (btn2) {
+        btn2.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.href = '/assets/downloadable/UmVkZW1wdG9yIGdsb3Jpb3N1cw0KSXVkZXggaW1wZXJhdG9yDQpPbW5pcG90ZW5zIG1hZ251cw0KRG9taW5hdG9y.mid';
+            link.download = 'UmVkZW1wdG9yIGdsb3Jpb3N1cw0KSXVkZXggaW1wZXJhdG9yDQpPbW5pcG90ZW5zIG1hZ251cw0KRG9taW5hdG9y.mid';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    }
+}
+
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMiniPlayer);
+    document.addEventListener('DOMContentLoaded', () => {
+        initMiniPlayer();
+        initDownloadButtons();
+    });
 } else {
     initMiniPlayer();
+    initDownloadButtons();
 }
