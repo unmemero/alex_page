@@ -5,7 +5,7 @@ function initMiniPlayer() {
     const nextBtn = document.getElementById('mini-next-btn');
     const playlistContainer = document.getElementById('mini-playlist');
     const volumeSlider = document.getElementById('mini-volume-slider');
-    
+
     // Ensure the mini player elements exist on the page
     if (!trackTitle || !playPauseBtn || !prevBtn || !nextBtn) return;
 
@@ -31,11 +31,11 @@ function initMiniPlayer() {
         try {
             const response = await fetch('/assets/music/tracks.json');
             tracks = await response.json();
-            if(tracks.length > 0) {
+            if (tracks.length > 0) {
                 renderPlaylist();
                 let trackIndex = getTrackIndexForPage();
                 if (trackIndex >= tracks.length) trackIndex = 0;
-                
+
                 currentTrackIndex = trackIndex;
                 const track = tracks[trackIndex];
                 const trackName = `${track.metaData.title}`;
@@ -43,7 +43,7 @@ function initMiniPlayer() {
                 trackTitle.title = trackName;
                 audio.src = track.url;
                 updatePlaylistUI();
-                
+
                 const path = window.location.pathname.toLowerCase();
                 if (!path.includes('music')) {
                     const playPromise = audio.play();
@@ -108,14 +108,14 @@ function initMiniPlayer() {
         trackTitle.title = trackName;
         audio.src = track.url;
         updatePlaylistUI();
-        
+
         if (isPlaying) {
             audio.play();
         }
     }
 
     function togglePlay() {
-        if(tracks.length === 0) return;
+        if (tracks.length === 0) return;
         if (audio.paused) {
             audio.play();
         } else {
@@ -126,12 +126,12 @@ function initMiniPlayer() {
     playPauseBtn.addEventListener('click', togglePlay);
 
     prevBtn.addEventListener('click', () => {
-        if(tracks.length === 0) return;
+        if (tracks.length === 0) return;
         playTrack((currentTrackIndex - 1 + tracks.length) % tracks.length);
     });
 
     nextBtn.addEventListener('click', () => {
-        if(tracks.length === 0) return;
+        if (tracks.length === 0) return;
         playTrack((currentTrackIndex + 1) % tracks.length);
     });
 
@@ -172,8 +172,8 @@ function initMiniPlayer() {
 function initDownloadButtons() {
     const btn1 = document.getElementById('btn1');
     const btn2 = document.getElementById('btn2');
-    if (btn1) {
-        btn1.addEventListener('click', () => {
+    if (btn2) {
+        btn2.addEventListener('click', () => {
             const link = document.createElement('a');
             link.href = '/assets/downloadable/UmVkZW1wdG9yIGdsb3Jpb3N1cw0KRGV1cyBhZXRlcm51cw0KSW1wZXJhdG9yIG9tbmlwb3RlbnM=.mid';
             link.download = 'UmVkZW1wdG9yIGdsb3Jpb3N1cw0KRGV1cyBhZXRlcm51cw0KSW1wZXJhdG9yIG9tbmlwb3RlbnM=.mid';
@@ -182,8 +182,8 @@ function initDownloadButtons() {
             document.body.removeChild(link);
         });
     }
-    if (btn2) {
-        btn2.addEventListener('click', () => {
+    if (btn3) {
+        btn3.addEventListener('click', () => {
             const link = document.createElement('a');
             link.href = '/assets/downloadable/UmVkZW1wdG9yIGdsb3Jpb3N1cw0KSXVkZXggaW1wZXJhdG9yDQpPbW5pcG90ZW5zIG1hZ251cw0KRG9taW5hdG9y.mid';
             link.download = 'UmVkZW1wdG9yIGdsb3Jpb3N1cw0KSXVkZXggaW1wZXJhdG9yDQpPbW5pcG90ZW5zIG1hZ251cw0KRG9taW5hdG9y.mid';
